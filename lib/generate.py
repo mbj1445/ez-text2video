@@ -37,7 +37,7 @@ def make_pipeline_generator(
         "damo-vilab/text-to-video-ms-1.7b",
         cache_dir="./cache",
         variant="fp16",
-        torch_dtype=torch.float32 if device == "cpu" else torch.float16,
+        torch_dtype=torch.float16 if device == "cuda" else torch.float32,
     )
 
     if cpu_offload:
